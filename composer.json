@@ -1,0 +1,25 @@
+{
+  "name": "mixaker/api-nbp",
+  "authors": [
+    {
+      "name": "Mikhail Makavetski",
+      "email": "mikhail.makavetski@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\Models\\": "app/Models/",
+      "App\\Controllers\\": "app/Controllers/",
+      "App\\Services\\": "app/Services/",
+      "System\\": "system/",
+      "System\\Database\\": "system/Database/",
+      "Helpers\\": "helpers/",
+      "Commands\\": "commands/"
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "twig/twig": "^3.0",
+    "ext-pdo": "*"
+  }
+}
