@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        {% for key in collection[0]|keys %}
+            <th style="padding: 6px">{{ key }}</th>
+        {% endfor %}
+    </tr>
+    {% for item in collection %}
+        <tr>
+            {% for value in item %}
+                <td style="padding: 6px">{{ value }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>

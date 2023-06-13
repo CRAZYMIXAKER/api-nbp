@@ -1,0 +1,9 @@
+{% extends 'layout/main.twig' %}
+{% block content %}
+    <h1>History of converted currencies</h1>
+    {% if history is not empty %}
+        {% include "components/table.twig" with { collection: history } %}
+    {% else %}
+        History of converted currencies is empty
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'layout/main.twig' %}
+{% block content %}
+    <h1>Convert form</h1>
+    <form action="/converter" method="post">
+        <div>
+            <div>
+                <label>Currency from</label>
+                {% include "converter/_select.twig" with { select: selects.source, currencies: currencies } %}
+            </div>
+            {% if errors[selects.source.name] is defined %}
+                <span class="error" style="color: red;">{{ errors[selects.source.name] }}</span>
+            {% endif %}
+        </div>
+        <div>
+            <div>
+                <label>Currency to</label>
+                {% include "converter/_select.twig" with { select: selects.target, currencies: currencies } %}
+            </div>
+            {% if errors[selects.target.name] is defined %}
+                <span class="error" style="color: red;">{{ errors[selects.target.name] }}</span>
+            {% endif %}
+        </div>
+        <div>
+            <div>
+                <label for="requested_value">Requested value</label>
+                <input
+                        name="requested_value"
+                        id="requested_value"
+                        type="text"
+                        value="{{ requested_value ?? '' }}"
+                        required>
+            </div>
+            {% if errors['requested_value'] is defined %}
+                <span class="error" style="color: red;">{{ errors['requested_value'] ?? '' }}</span>
+            {% endif %}
+        </div>
+
+        {% if converted_value is defined %}
+            <div>
+                <label>Converted value</label>
+                <span>{{ converted_value }}</span>
+            </div>
+        {% endif %}
+        <button>Convert</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,9 @@
+<select name="{{ select.name }}">
+    {% for option in currencies %}
+        <option
+                value="{{ option.id }}"
+                {{ select.selected_id|default == option.id ? 'selected' : '' }}>
+            {{ option.code }} - {{ option.currency }}
+        </option>
+    {% endfor %}
+</select>

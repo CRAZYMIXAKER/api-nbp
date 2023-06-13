@@ -1,0 +1,8 @@
+<div class="wrapper__navigation" style="margin-left: 10px; margin-top: 10px;">
+    {{ links.uri != '/' ? "<a href='/' style='margin-right: 15px;'>Main page</a>" : '' }}
+    {{ links.uri != '/currency' ? "<a href='/currency' style='margin-right: 15px;'> Currency exchange rate </a>" : '' }}
+    {{ links.uri != '/converter' ? "<a href='/converter' style='margin-right: 15px;'> Convertor </a>" : '' }}
+    {{ links.uri != '/converted-currency-history'
+    ? "<a href='/converted-currency-history'> History of converted currencies </a>"
+    : '' }}
+</div>
