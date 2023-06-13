@@ -128,9 +128,9 @@ return new class implements MigrationInterface {
     }
 
     /**
-     * @return int
+     * @return mixed
      */
-    protected function getMaxMigrationBatch(): int
+    protected function getMaxMigrationBatch(): mixed
     {
         $batchMaxQuery = "SELECT batch FROM migrations ORDER BY batch DESC LIMIT 1";
         return (static::$db->query($batchMaxQuery)->fetch())['batch'];
