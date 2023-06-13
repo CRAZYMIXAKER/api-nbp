@@ -35,6 +35,7 @@ API NBP: http://api.nbp.pl/
 ## Start project
 
 ```
+cp .env.example .env
 docker-compose up -d --build
 docker exec -it api-nbp_php_1 bash
 composer install
